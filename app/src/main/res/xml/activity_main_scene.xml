@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+        <OnSwipe motion:maxAcceleration="0.1"
+            motion:maxVelocity="0.1" />
+       <KeyFrameSet>
+           <KeyPosition
+               motion:motionTarget="@+id/ic_cloud"
+               motion:framePosition="75"
+               motion:keyPositionType="deltaRelative"
+               motion:percentY="0" />
+           <KeyPosition
+               motion:motionTarget="@+id/ic_cloud"
+               motion:framePosition="50"
+               motion:keyPositionType="deltaRelative"
+               motion:percentX="0" />
+           <KeyPosition
+               motion:motionTarget="@+id/ic_cloud"
+               motion:framePosition="25"
+               motion:keyPositionType="deltaRelative"
+               motion:percentY="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/ic_android_robot"
+               motion:framePosition="25"
+               android:rotation="15" />
+           <KeyAttribute
+               motion:motionTarget="@+id/ic_android_robot"
+               motion:framePosition="50"
+               android:rotation="-15" />
+           <KeyAttribute
+               motion:motionTarget="@+id/ic_android_robot"
+               motion:framePosition="75"
+               android:rotation="15" />
+           <KeyAttribute
+               motion:motionTarget="@+id/ic_android_robot"
+               motion:framePosition="100"
+               android:rotation="0" />
+           <KeyPosition
+               motion:motionTarget="@+id/ic_leaf_3"
+               motion:framePosition="50"
+               motion:keyPositionType="parentRelative"
+               motion:percentY="0.75" />
+           <KeyPosition
+               motion:motionTarget="@+id/ic_leaf_4"
+               motion:framePosition="50"
+               motion:keyPositionType="parentRelative"
+               motion:percentX="0.75" />
+           <KeyPosition
+               motion:motionTarget="@+id/ic_leaf_1"
+               motion:framePosition="50"
+               motion:keyPositionType="parentRelative"
+               motion:percentX="0.10" />
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/ic_cloud"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="60dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="30dp"
+            motion:transitionEasing="linear" />
+        <Constraint
+            android:id="@+id/ic_leaf_1"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:rotation="70"
+            android:translationX="-18dp"
+            android:translationY="18dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/ic_android_robot"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="150dp" />
+        <Constraint
+            android:id="@+id/ic_leaf_3"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            motion:layout_editor_absoluteX="311dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:rotation="-80"
+            android:translationX="30dp"
+            android:translationY="20dp" />
+        <Constraint
+            android:id="@+id/ic_leaf_4"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:translationX="-120dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:translationY="100dp" />
+        <Constraint
+            android:id="@+id/ic_leaf_2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            motion:layout_editor_absoluteX="299dp"
+            android:translationX="130dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+
+        <Constraint android:id="@+id/info_layout"
+            android:layout_width="320dp"
+            android:layout_height="537dp"
+            motion:layout_constraintTop_toBottomOf="@id/ic_android_robot"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent" />
+        <Constraint
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+        <Constraint
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/tv_title" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/ic_cloud"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="0dp" />
+        <Constraint
+            android:id="@+id/ic_leaf_1"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            motion:layout_constraintTop_toBottomOf="@id/ic_cloud"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="0dp"
+            android:translationX="-18dp"
+            android:layout_marginTop="70dp"
+            motion:layout_constraintBottom_toTopOf="@id/ic_leaf_4"
+            android:layout_marginBottom="0dp" />
+        <Constraint
+            android:id="@+id/ic_android_robot"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_editor_absoluteX="56dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="20dp"
+            motion:layout_constraintBottom_toTopOf="@id/info_layout" />
+        <Constraint
+            android:id="@+id/ic_leaf_3"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            motion:layout_editor_absoluteX="282dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:translationX="20dp"
+            android:translationY="-40dp" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/ic_leaf_4"
+            android:translationX="-20dp"
+            android:translationY="150dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+        <Constraint
+            android:id="@+id/ic_leaf_2"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            motion:layout_editor_absoluteX="298dp"
+            android:translationX="40dp"
+            android:translationY="-70dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+        <Constraint
+            android:id="@+id/info_layout"
+            android:layout_height="537dp"
+            android:layout_width="320dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/ic_android_robot"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp" />
+        <Constraint
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+        <Constraint
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/tv_title" />
+        <Constraint
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/tv_title" />
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetStart="@+id/start"
+        motion:constraintSetEnd="@+id/end" />
+</MotionScene>
